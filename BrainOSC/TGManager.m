@@ -34,7 +34,7 @@ int (*TG_EnableBlinkDetection)(int, int) = NULL;
 	status = TGManagerStatusStopped;
 
 	bundleURL = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (CFStringRef)[NSString stringWithFormat:@"%@/Contents/Resources/ThinkGear.bundle",[[NSBundle mainBundle] bundlePath]],
-				kCFURLPOSIXPathStyle, true);
+				kCFURLPOSIXPathStyle, false);
 	NSLog(@"\t\tloading think gear bundle URL %@",(NSURL*)bundleURL);
 	thinkGearBundle = CFBundleCreate(kCFAllocatorDefault, bundleURL);
 	if(!thinkGearBundle)	{
@@ -93,7 +93,7 @@ int (*TG_EnableBlinkDetection)(int, int) = NULL;
 	NSLog(@"%s",__func__);
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	//	Create the connection, or bail
-	const char *portname = "/dev/tty.MindWave"; 
+	const char *portname = "/dev/tty.MindWaveMobile-DevA"; 
 	int ret = -1;
 	
 	if(!TG_Connect)	{
@@ -104,7 +104,7 @@ int (*TG_EnableBlinkDetection)(int, int) = NULL;
 	ret = TG_Connect(connectionID, portname, TG_BAUD_9600, TG_STREAM_PACKETS);
 	
 	if (ret)	{
-		NSLog(@"Error: TG_Connect failed %ld",ret);
+		NSLog(@"Error: TG_Connect failed %d",ret);
 		status = TGManagerStatusError;
 		_running = NO;
 		if (delegate)	{

@@ -1,14 +1,34 @@
 //
 //  main.m
-//  BrainOSC
+//  BrainOSC (Fork Ed)
 //
-//  Created by David Lublin on 2/20/12.
-//  Copyright 2012 Vidvox. All rights reserved.
+//  Created by Nick on 3/13/12.
+//  Rebuilt to work by Nick
+//  Copyrleft 2013 Nick. All wrongs reserved.
 //
+
+
+/*
+                               .--~~~~~~~~~~~~~------.
+                              /--===============------\
+                              | |```````````````|     |
+                              | |               |     |
+                              | |      >_<      |     |
+                              | |               |     |
+                              | |_______________|     |
+                              |                   ::::|
+                              '======================='
+                              //-"-"-"-"-"-"-"-"-"-"-\\
+                             //_"_"_"_"_"_"_"_"_"_"_"_\\
+                             [-------------------------]
+                             \_________________________/
+ 
+ 
+*/
 
 #import <Cocoa/Cocoa.h>
 
 int main(int argc, char *argv[])
 {
-    return NSApplicationMain(argc,  (const char **) argv);
+    return NSApplicationMain(argc, (const char **)argv);
 }
