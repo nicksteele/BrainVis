@@ -82,7 +82,7 @@ typedef enum	{
 	
 	id delegate;
 
-    CFBundleRef thinkGearBundle;
+	CFBundleRef thinkGearBundle;
 	int connectionID;
 
 	BOOL _running;
