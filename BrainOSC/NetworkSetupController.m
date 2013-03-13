@@ -24,7 +24,7 @@
 	return nil;
 }
 - (void) awakeFromNib	{
-	//NSLog(@"%s",__func__);
+	NSLog(@"%s",__func__);
 	[oscManager setInPortLabelBase:@"DMXviaOSC"];
 	//	create a new input port, populate the relevant fields
 	OSCInPort		*inPort = [oscManager createNewInput];
